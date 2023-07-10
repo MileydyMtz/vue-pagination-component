@@ -39,9 +39,7 @@ Este componente emite el siguiente evento:
 
 ## Uso del componente
 Para utilizar este componente, primero se debe descargar el archivo *ThePagination.vue* que se encuentra dentro de *src/components* y agregarlo al proyecto donde se reutilizara.
-
 Este componente se puede utilizar principalmente para proporcionar paginación en tablas de datos o listas de elementos, y emite un evento personalizado cuando se cambia de página, permitiendo así a los componentes padres reaccionar a estos cambios.
-
 Para usar este componente se deben pasar mediante la etiqueta de **ThePaginatión** las propiedades *totalItems* (el total de los resultados de la búsqueda) y *itemsPerPage* (la cantidad de resultados a mostrar por página). También se escucha el evento *page-change* para actualizar la página actual (*currentPage*) cuando se cambia de página.
 
 ```vue 
