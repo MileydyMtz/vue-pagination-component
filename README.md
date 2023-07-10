@@ -49,7 +49,7 @@ Para usar este componente se deben pasar mediante la etiqueta de **ThePaginatió
     :totalItems="100"
     :itemsPerPage="10"
     @page-change="currentPage = $event"
->
+/>
 
 ```
 
@@ -72,13 +72,13 @@ De esta manera la etiqueta del componente de paginacion quedaria de la siguiente
 
 Se escucha el evento page-change que se emite desde ThePagination. Cuando se emite este evento (cuando se cambia de página), se actualiza currentPage con el nuevo número de página:
 
-```vue
+```html
 @page-change="currentPage = $event"
 ```
 
 Las variables de datos de *currentPage* e *itemsPerPage* se definen en la data del componente padre, junto a las variables de datos del componente de busqueda:
 
-```vue
+```js
     data() {
         return {
             results: [],
@@ -92,7 +92,7 @@ Las variables de datos de *currentPage* e *itemsPerPage* se definen en la data d
 
 Tambien se utiliza la propiedad computada *paginatedResults* para calcular qué resultados de la búsqueda se deben mostrar en la página actual. Se calcula el inicio y el final del segmento de los resultados totales que se deben mostrar, y se devuelve este segmento:
 
-```vue
+```js
 computed: {
     paginatedResults() {
         const start = (this.currentPage - 1) * this.itemsPerPage;
