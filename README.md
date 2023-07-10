@@ -72,7 +72,7 @@ De esta manera la etiqueta del componente de paginacion quedaria de la siguiente
 
 Se escucha el evento page-change que se emite desde ThePagination. Cuando se emite este evento (cuando se cambia de página), se actualiza currentPage con el nuevo número de página:
 
-```html
+```
 @page-change="currentPage = $event"
 ```
 
