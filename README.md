@@ -34,7 +34,7 @@ Este componente tiene los siguientes métodos:
 Este componente emite el siguiente evento: 
 * **page-change**: Este evento se emite cada vez que se cambia de página. El nuevo número de página se pasa como un argumento al manejador del evento. 
 
-### CSS
+### Estilos
 * Los estilos están definidos en la sección de <style> y usan la extensión .scss.
 * Los estilos están "scoped", lo que significa que solo se aplicarán a este componente y no afectarán a otros componentes de la aplicación donde se reutilice.
 * Los colores para los botones y las letras son personalizables a través de las variables de color *$button-color* y *$letter-color*, respectivamente.
@@ -42,10 +42,10 @@ Este componente emite el siguiente evento:
 ## Uso del componente
 Para utilizar este componente, primero se debe descargar el archivo *ThePagination.vue* que se encuentra dentro de *src/components* y agregarlo al proyecto donde se reutilizara.
 Este componente se puede utilizar principalmente para proporcionar paginación en tablas de datos o listas de elementos, y emite un evento personalizado cuando se cambia de página, permitiendo así a los componentes padres reaccionar a estos cambios.
-Para usar este componente se deben pasar mediante la etiqueta de **ThePaginatión** las propiedades *totalItems* (el total de los resultados de la búsqueda) y *itemsPerPage* (la cantidad de resultados a mostrar por página). También se escucha el evento *page-change* para actualizar la página actual (*currentPage*) cuando se cambia de página.
+Para usar este componente se deben pasar mediante la etiqueta de **Paginatión** las propiedades *totalItems* (el total de los resultados de la búsqueda) y *itemsPerPage* (la cantidad de resultados a mostrar por página). También se escucha el evento *page-change* para actualizar la página actual (*currentPage*) cuando se cambia de página.
 
 ```vue 
-<ThePagination
+<Pagination
     :totalItems="100"
     :itemsPerPage="10"
     @page-change="currentPage = $event"
@@ -56,12 +56,12 @@ Para usar este componente se deben pasar mediante la etiqueta de **ThePaginatió
 ### Ejemplo
 A continuación, se presenta un ejemplo de uso del componente de *ThePagination*.
 
-En este ejemplo el componente de paginación está diseñado para trabajar en conjunción con otro componente, *SearchBox*, que emite los resultados de la búsqueda y otros eventos. App.vue recibe estos eventos, y en base a ellos, actualiza los datos que luego se pasan a *ThePagination*. Por ejemplo, cuando SearchBox emite los resultados de una búsqueda, App.vue actualiza la matriz results con estos datos. 
+En este ejemplo el componente de paginación está diseñado para trabajar en conjunción con otro componente, *SearchBox*, que emite los resultados de la búsqueda y otros eventos. App.vue recibe estos eventos, y en base a ellos, actualiza los datos que luego se pasan a *ThePagination*. Por ejemplo, cuando SearchBox emite los resultados de una búsqueda, App.vue actualiza la matriz *results* con estos datos. 
 Dado que *ThePagination* depende de *results* para calcular el total de elementos (*totalItems*), este cambio en *results* afectará el comportamiento de *ThePagination*.
 De esta manera la etiqueta del componente de paginación quedaría de la siguiente forma:
 
 ```vue
-<ThePagination 
+<Pagination 
     v-if="results.length" 
     :totalItems="results.length" 
     :itemsPerPage="itemsPerPage" 
@@ -70,7 +70,7 @@ De esta manera la etiqueta del componente de paginación quedaría de la siguien
 
 ```
 
-Se escucha el evento page-change que se emite desde *ThePagination*. Cuando se emite este evento (cuando se cambia de página), se actualiza currentPage con el nuevo número de página:
+Se escucha el evento *page-change* que se emite desde *ThePagination*. Cuando se emite este evento (cuando se cambia de página), se actualiza *currentPage* con el nuevo número de página:
 
 ```
 @page-change="currentPage = $event"
@@ -126,7 +126,7 @@ En el ejemplo anterior se utilizó el componente de paginación que se integró 
 
 
 ## Pruebas
-Las pruebas se han implementado utilizando la biblioteca vitest para correr las pruebas y @vue/test-utils para montar el componente. 
+Se utiliza la biblioteca Vitest para correr las pruebas y @vue/test-utils para montar el componente. 
 
 A continuación, se muestran las pruebas implementadas:
 
